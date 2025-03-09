@@ -7,13 +7,13 @@ namespace cs106l {
 
 /**
  * @brief A smart pointer that owns an object and deletes it when it goes out of scope.
- * @tparam T The type of the object to manage.
+ * @taram T The type of the object to manage.
  * @note This class is a simpler version of `std::unique_ptr`.
  */
 template <typename T> class unique_ptr {
 private:
   /* STUDENT TODO: What data must a unique_ptr keep track of? */
-
+   T *uniptr;
 public:
   /**
    * @brief Constructs a new `unique_ptr` from the given pointer.
@@ -22,6 +22,7 @@ public:
    */
   unique_ptr(T* ptr) {
     /* STUDENT TODO: Implement the constructor */
+    uniptr = ptr;
     throw std::runtime_error("Not implemented: unique_ptr(T* ptr)");
   }
 
@@ -30,6 +31,7 @@ public:
    */
   unique_ptr(std::nullptr_t) {
     /* STUDENT TODO: Implement the nullptr constructor */
+    uniptr = nullptr;
     throw std::runtime_error("Not implemented: unique_ptr(std::nullptr_t)");
   }
 
@@ -45,6 +47,7 @@ public:
    */
   T& operator*() {
     /* STUDENT TODO: Implement the dereference operator */
+    return  *uniptr;
     throw std::runtime_error("Not implemented: operator*()");
   }
 
@@ -54,6 +57,7 @@ public:
    */
   const T& operator*() const {
     /* STUDENT TODO: Implement the dereference operator (const) */
+    
     throw std::runtime_error("Not implemented: operator*() const");
   }
 
